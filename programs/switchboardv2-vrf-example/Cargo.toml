@@ -1,0 +1,26 @@
+[package]
+name = "switchboardv2-vrf-example"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "switchboardv2_vrf_example"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[profile.release]
+overflow-checks = true
+
+[dependencies]
+switchboard-v2 = { version = "^0.1.14", features = ["devnet"] }
+anchor-lang = "0.25.0"
+anchor-spl = "^0.25.0"
+solana-program = "~1.10.29"
+bytemuck = "1.7.2"
